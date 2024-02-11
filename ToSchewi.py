@@ -44,10 +44,11 @@ class SchewiLangTranslator_Widget(QWidget):
         self.L_Layout.addWidget(word_scroll_area)
 
         self.R_Layout = QVBoxLayout()
-        self.CONFIRM_BTN = QPushButton("CONFIRM")
+        self.SCHEWIFY_BTN = QPushButton("JUST Schewify")
+        self.SCHEWIFY_BTN.clicked.connect(lambda: self.schewify())
 
-        self.R_Layout.addWidget(self.CONFIRM_BTN)
-        self.CONFIRM_BTN.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding))
+        self.R_Layout.addWidget(self.SCHEWIFY_BTN)
+        self.SCHEWIFY_BTN.setSizePolicy(QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding))
 
         self.setWindowTitle("shiüo / SchewiLang")
         # self.setWindowIcon(QIcon(global_path.get_proj_abs_path("assets/icon.png")))
@@ -96,7 +97,11 @@ class SchewiLangTranslator_Widget(QWidget):
 
     def add_word_to_input_box(self, word):
         current_text = self.OUTPUT_BOX.toPlainText()
-        self.OUTPUT_BOX.setPlainText(current_text + word)
+        self.OUTPUT_BOX.setPlainText(current_text + word + " / ")
+
+    def schewify(self):
+        current_text = self.OUTPUT_BOX.toPlainText()
+        self.OUTPUT_BOX.setPlainText(current_text + to_schewi_written(self.INPUT_BOX.toPlainText()) + " / ")
 
     def clearScrollArea(self):
         while self.scroll_layout.count():
