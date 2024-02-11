@@ -3,7 +3,7 @@ import json
 with open("KrToSchewiUni.json", "r", encoding="utf8") as f:
     data = json.load(f)
 
-test_str = "즈에 이이카 아이로 오넨네시다네"
+test_str = "단단 오치테쿠 아이큐우 쿠소와로 칸젠타이노 야마다"
 
 res = ""
 for word in test_str:
