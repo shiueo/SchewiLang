@@ -2,7 +2,6 @@ import sys
 import json
 from functools import partial
 
-from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QWidget, QApplication, QMainWindow, QDialog, QVBoxLayout, QLabel, QScrollArea, QTextEdit, \
     QSizePolicy, QGridLayout, QPlainTextEdit, QSpacerItem, QHBoxLayout, QPushButton
 
