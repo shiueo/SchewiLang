@@ -96,11 +96,11 @@ class SchewiLangTranslator_Widget(QWidget):
 
     def add_word_to_input_box(self, word):
         current_text = self.OUTPUT_BOX.toPlainText()
-        self.OUTPUT_BOX.setPlainText(current_text + word + " / ")
+        self.OUTPUT_BOX.setPlainText(current_text + word + " ")
 
     def schewify(self):
         current_text = self.OUTPUT_BOX.toPlainText()
-        self.OUTPUT_BOX.setPlainText(current_text + to_schewi_written(self.INPUT_BOX.toPlainText()) + " / ")
+        self.OUTPUT_BOX.setPlainText(current_text + to_schewi_written(self.INPUT_BOX.toPlainText()) + " ")
 
     def clearScrollArea(self):
         while self.scroll_layout.count():
